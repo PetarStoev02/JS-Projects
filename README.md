@@ -7,6 +7,8 @@ This are the list of projects that i`am building in my Javascript Portfolio.
 ## List of Projects covered:
     1) Calculator
     2) Random User Generator
+    3) Quiz App
+    
 ## 🚀 About Me
 Hello! My name is Petar Stoev and I'm a Web Developer.
 
