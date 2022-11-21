@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+body{
+    background-image: url("/images/background.png");
+    background-color: aqua;
+}
+
+
+.carousel-item{
+    min-height:400px;
+}
