@@ -1,23 +1,129 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    outline: 0;
-    transition: all 0.5s ease;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  transition: all 0.5s ease;
 }
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-
-
-body{
-    background-image: url("/images/background.png");
-    background-color: aqua;
+body {
+  background-image: url("/images/background.png");
+  background-color: aqua;
 }
 
+.navbar-nav a {
+  font-size: 20px;
+  color: #550066;
+  font-family: DM Sans;
+}
 
-.carousel-item{
-    min-height:400px;
+.info {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 100px;
+  padding: 50px;
+}
+
+.info h1 {
+  font-family: Safira March;
+  color: #008037;
+
+  padding-bottom: 30px;
+  font-size: 56px;
+}
+
+.info h2 {
+  font-family: Safira March;
+  color: #710092;
+
+  padding-bottom: 120px;
+  font-size: 18px;
+}
+
+.info button {
+  border-radius: 40px;
+  width: 120px;
+  height: 40px;
+  background-color: #ecd8f1;
+  border: none;
+  cursor: pointer;
+}
+
+.info .colum-1 {
+  display: inline;
+  padding: 50px;
+}
+
+.info .colum-2 {
+  padding: 50px;
+}
+
+.info .colum-2 img {
+  height: 80vh;
+  width: 100%;
+  border-radius: 40px;
+}
+
+.searchbar {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 100%;
+  padding: 50px;
+}
+
+.searchbar .box-1 img,
+.box-2 img,
+.box-3 img,
+.box-4 img {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.box-1,
+.box-2 {
+  padding-top: 50px;
+}
+
+.searchbar .colum-1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  column-gap: 30px;
+  padding: 30px;
+}
+
+.searchbar .colum-2 {
+  display: inline;
+  text-align: center;
+  padding: 40% 30px;
+}
+
+.search-container {
+  width: 100%;
+  height: auto;
+  background-color: #ecd8f1;
+  border-radius: 60px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.searchbar .colum-2 button {
+  width: 200px;
+  height: auto;
+  padding: 5px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #ecd8f1;
+  margin: 0 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
