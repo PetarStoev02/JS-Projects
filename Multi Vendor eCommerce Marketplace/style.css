@@ -113,6 +113,20 @@ body {
   border-radius: 60px;
   padding: 30px;
   margin-bottom: 40px;
+  border-radius: 30px;
+}
+.search-container input{
+  border-radius: 30px;
+  padding: 5px 45px;
+  border: 0;
+  text-align: left;
+}
+.search-container i{
+  background-color:#fff;
+  color:#000;
+  padding: 15px;
+  border-radius:50%;
+  
 }
 
 .searchbar .colum-2 button {
@@ -126,4 +140,141 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+.pop-up{
+  min-height: 100vh;
+  padding: 50px;
+  text-align: center;
+}
+
+.pop-up h1{
+  font-size:30px;
+  font-family: DM Sans;
+  color: #550066;
+  margin:40px auto;
+}
+
+.pop-up h2{
+  font-size:15px;
+  font-family: DM Sans;
+  text-align:left;
+  color: #550066;
+  margin: 15px auto;
+  
+}
+
+.parent{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  text-align: center;
+}
+
+.parent .pop-up-col-1,.pop-up-col-2,.pop-up-col-3{
+  width: 100%;
+  min-height: 300px;
+}
+
+.parent img{
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 350px;
+  cursor: pointer;
+}
+
+.pop-up-buttons button {
+  width: 200px;
+  height: auto;
+  padding: 5px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #ecd8f1;
+  margin: 60px 10px 30px 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.new-upload-container h1{
+  font-size:30px;
+  font-family: DM Sans;
+  color: #550066;
+  margin:40px auto;
+  text-align: center;
+}
+
+
+.new-upload-container {
+  padding: 50px;
+  text-align: center;
+}
+
+
+.new-upload-container h2{
+  font-size:15px;
+  font-family: DM Sans;
+  text-align:left;
+  color: #550066;
+  margin: 15px auto;
+  
+}
+
+.parent-upload-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  text-align: center;
+}
+
+.parent-upload-container img{
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 500px;
+  border-radius:30px;
+  cursor: pointer;
+}
+.parent-upload-container .upload-col-1,.upload-col-2,.upload-col-3,.upload-col-4{
+  width: 100%;
+  min-height: 300px;
+}
+
+.instagram-feed-container h1{
+  font-size:30px;
+  font-family: DM Sans;
+  color: #550066;
+  margin:40px auto;
+  text-align: center;
+  padding: 50px;
+}
+
+.instagram-feed-container {
+  padding: 50px;
+}
+
+.instagram-feed-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  text-align: center;
+}
+
+.instagram-feed-grid img{
+  width: 250px;
+  height: 250px;
+ 
+  cursor: pointer;
+}
+
+
+footer{
+  background-color: #fff;
+  height: 50vh;
 }
