@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/your-path-to-fontawesome/js/fontawesome.js"></script>
+    <title>To Do App</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <div class="container">
+        <div class="toDo">
+            <h1>To Do<span class="search"><i class="fa-solid fa-magnifying-glass"></i></span><span class="add"><i class="fa-sharp fa-solid fa-plus"></i></span></h1>
+              <div class="diveder"></div>
+                <div class="taskContaiter" id="toDo">
+                </div>
+        </div>
+        <div class="inProgress">
+            <h1>In Progress</h1>
+            <div class="diveder"></div>
+            <div class="taskContaiter" id="inProgress">
+            </div>
+
+        </div>
+        <div class="isDone">
+            <h1>Done</h1>
+            <div class="diveder"></div>
+            <div class="taskContaiter" id="isDone">
+            </div>
+        
+        </div>
+        </div>
+        <div class="createTask hidden">
+            <h1>Create Task</h1>
+            <form onsubmit="return validation()">
+                <label for="taskName">Task Name:</label><br>
+                    <input type="text" id="taskName" name="TaskName"><br>
+                        <span id="Name" class="text-danger font-weight-regular"> </span>
+                <label for="taskDescription">Task Description:</label><br>
+                    <input type="text" id="taskDescription" name="taskDescription">
+                        <span id="Description" class="text-danger font-weight-regular"> </span>
+
+                <label for="start">Due to:</label>
+                    <input type="date" id="date" name="due-to">
+                    <span id="TaskDate" class="text-danger font-weight-regular"> </span>
+
+                    <input type="submit" id="createTaskBtn" value="Create">
+            </form>
+        </div>
+
+        <div class="searchTask hidden">
+            <h1>Search</h1>
+            <form>
+                <input type="text" id="filter" class="filter" placeholder="Filter tasks..." />
+                <span id="filterText" class="text-danger font-weight-regular"> </span>
+
+                <input type="submit" id="searchTask" class="searchBtn" value="Search">
+            </form>
+         
+        </div>
+
+
+        <div class="overlay hidden"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+:root {
+  --primary-clr: #7be420;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* nice scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-clr);
+  border-radius: 50px;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: #ffffff;
+}
+.container {
+  position: relative;
+  width: 1500px;
+  height: 95vh;
+  margin: 20 auto;
+  padding: 30px 60px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #373c4f;
+}
+
+/*Grid*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+}
+
+.toDo {
+  grid-area: 1 / 1 / 6 / 2;
+}
+.inProgress {
+  grid-area: 1 / 2 / 6 / 3;
+}
+.isDone {
+  grid-area: 1 / 3 / 6 / 4;
+}
+.calendar {
+  grid-area: 1 / 4 / 6 / 5;
+}
+
+.diveder {
+  width: 100%;
+  margin-top: 5px;
+  border: 1.3px solid #878895;
+}
+
+.taskContaiter {
+  margin: 10px 0;
+  height: 100%;
+  overflow: hidden;
+}
+.collapsible {
+  margin-top: -20px;
+  height: 100px;
+  padding: 20px 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border-radius: 0 0 20px 20px;
+}
+
+.collapsible p {
+  color: 878895;
+  text-align: left;
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+.collapsible h3 {
+  color: var(--primary-clr);
+  text-align: right;
+  margin: auto 5px;
+
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#toDo .task {
+  max-height: 50px;
+  background-color: #99a8bb;
+  padding: 10px;
+  margin: 11px 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+#inProgress .task {
+  max-height: 50px;
+  background-color: #99a8bb;
+  padding: 10px;
+  margin: 11px 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+#isDone .task {
+  max-height: 50px;
+  background-color: #99a8bb;
+  padding: 10px;
+  margin: 11px 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  text-align: right;
+  margin: auto 5px;
+}
+
+.actions a {
+  color: var(--primary-clr);
+  text-align: right;
+  margin: auto 5px;
+
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task h2 {
+  color: #fff;
+  margin: auto 10px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*To Do CSS Start*/
+.toDo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #878895;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.toDo h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-height: 1em;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.toDo .add {
+  padding: 0;
+  color: var(--primary-clr);
+  cursor: pointer;
+}
+
+.toDo .search {
+  padding: 0;
+  margin-left: 225px;
+  color: var(--primary-clr);
+  cursor: pointer;
+}
+/*To Do CSS End*/
+
+.inProgress {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #878895;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.inProgress h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 1em;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.isDone {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #878895;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.isDone h1 {
+  display: flex;
+  align-items: center;
+  max-height: 1em;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/*Create Task Overlay*/
+.createTask {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 30em;
+  width: 40em;
+  padding: 50px;
+  color: #878895;
+  border-radius: 25px;
+  background-color: #373c4f;
+  position: absolute;
+  z-index: 2;
+}
+
+.searchTask {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 30em;
+  width: 40em;
+  padding: 50px;
+  color: #878895;
+  border-radius: 25px;
+  background-color: #373c4f;
+  position: absolute;
+  z-index: 2;
+}
+
+.createTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #4343438c;
+
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-danger {
+  color: red;
+}
