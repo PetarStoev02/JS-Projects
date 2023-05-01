@@ -46,8 +46,10 @@ function renderTaskList() {
       task.name,
       task.description,
       task.date,
-      task.state
+      task.id,
+      task.state,
     );
+    
   });
 
   // Set the 'tasks' key in local storage to the uniqueTasks for perfomance
@@ -77,18 +79,29 @@ function removeDuplicates(array, key) {
   return uniqueArray;
 }
 
-function createTaskElement(taskName, taskDescription, taskDate) {
+function createTaskElement(taskName, taskDescription, taskDate, id) {
+  let taskId 
+
+  if(id){
+  taskId=id
+
+  }else{
+    taskId = Math.floor(Math.random() * 100);
+  }
+  
+
   // Create task object with name, description, date, and completion status
   const task = {
     name: taskName,
     description: taskDescription,
     date: taskDate,
     completed: false,
+    id: taskId,
   };
 
+  console.log("task id" , task.id);
   // Add new task to the array
   tasks.push(task);
-  
 
   // Store updated tasks array in local storage
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -96,7 +109,9 @@ function createTaskElement(taskName, taskDescription, taskDate) {
   // Create Main Div
   let div = document.createElement("div");
   div.className = "task";
-  div.id = Math.floor(Math.random() * 100);
+
+  
+  div.id = task.id;
 
   // Create Actions Div
   let actionsDiv = document.createElement("div");
@@ -105,7 +120,6 @@ function createTaskElement(taskName, taskDescription, taskDate) {
   // Create Colapsable Description for Main Div
   let collapsibleDiv = document.createElement("div");
   collapsibleDiv.className = "collapsible";
-
 
   // Create Text for Main Div
   let nameElement = document.createElement("h2");
@@ -144,7 +158,7 @@ function createTaskElement(taskName, taskDescription, taskDate) {
   div.appendChild(actionsDiv);
   // div.appendChild(collapsibleDiv);
 
-  div.addEventListener("click", function() {
+  div.addEventListener("click", function () {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
@@ -159,20 +173,15 @@ function createTaskElement(taskName, taskDescription, taskDate) {
   div.addEventListener("dragstart", onDragStart);
   div.addEventListener("dragstart", onDragEnd);
 
- 
-  if(task.completed){
+  if (task.completed) {
     const taskContainer = document.querySelector("#isDone");
     taskContainer.appendChild(div);
     taskContainer.appendChild(collapsibleDiv);
-    
-
-  }else if(task.completed===false){
+  } else if (task.completed === false) {
     const taskContainer = document.querySelector("#toDo");
     taskContainer.appendChild(div);
     taskContainer.appendChild(collapsibleDiv);
-
   }
-
 }
 
 //Task Div Buttons Functions
@@ -224,18 +233,17 @@ function saveTaskElement(event) {
 
   taskElement.replaceChild(taskSpanElement, taskTextElement);
 
-  // const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  console.log(taskElement.id);
+  console.log(existingTasks);
 
-  // // Find the task to edit
-  // const taskToEdit = existingTasks.find(
-  //   (task) => task.name === taskElement.firstChild.value||taskElement.firstChild
-  // );
-  // console.log(taskToEdit);
+  // Find the task to edit
+  const taskToEdit = existingTasks.find((task) => task.id === taskElement.id);
+  console.log(taskToEdit);
 
-  // // Update the task properties
-  // taskToEdit.name = taskTextElement.value
+  // Update the task properties
+  // taskToEdit.name = taskTextElement.value;
   // console.log(taskToEdit.name);
-  //  taskToEdit.date = newDate;
+  // taskToEdit.date = newDate;
 
   // Update local storage with the new array of tasks
   localStorage.setItem("tasks", JSON.stringify(existingTasks));
@@ -293,11 +301,13 @@ formCreateBtn.addEventListener("click", function (e) {
   const taskName = document.querySelector("#taskName");
   const taskDescription = document.querySelector("#taskDescription");
   const taskDate = document.querySelector("#date");
+  // const taskId = Math.floor(Math.random() * 100);
 
   console.log(validation());
   if (validation() === true) {
     closeCreateTask();
     createTaskElement(taskName.value, taskDescription.value, taskDate.value);
+    
   } else {
     return false;
   }
